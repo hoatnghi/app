@@ -20,8 +20,8 @@
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView" />
 	</bean>
-
-	<mvc:resources mapping="/WEB-INF/**" location="/" />
+	
+	<mvc:resources mapping="/resources/**" location="/resources/" />
 
 	<mvc:default-servlet-handler />
 

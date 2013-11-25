@@ -9,6 +9,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping(value="/gallery")
 public class GalleryController {
 	
+	@RequestMapping(value="/", method=RequestMethod.GET)
+	public String home(Model model) {
+		return "Home";
+	}
+	
 	@RequestMapping(value="/picasa", method=RequestMethod.GET)
 	public String picasa(Model model) {
 		return "GooglePicasa";

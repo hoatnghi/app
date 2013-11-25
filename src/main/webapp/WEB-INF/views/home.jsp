@@ -3,10 +3,10 @@
     <h3 class="page-header">Gallery</h3>
   </div>
   <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-    <a class="thumbnail" href="${driveURL}"><img class="img-responsive" width="400px" src="/static/images/GoogleDrive.png"></a>
+    <a class="thumbnail" href="${driveURL}"><img class="img-responsive" width="400px" src="${pageContext.request.contextPath}/resources/images/GoogleDrive.png"></a>
   </div>
   <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-    <a class="thumbnail" href="${picasaURL}"><img class="img-responsive" width="400px" src="/static/images/Picasa.png"></a>
+    <a class="thumbnail" href="${picasaURL}"><img class="img-responsive" width="400px" src="${pageContext.request.contextPath}/resources/images/Picasa.png"></a>
   </div>
 </div>
 <div class="row">

@@ -10,14 +10,14 @@
     <title><tiles:getAsString name="title"/></title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/resource/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS for the 'Thumbnail Gallery' Template -->
-    <link href="/resource/bootstrap/css/thumbnail-gallery.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/resources/bootstrap/css/thumbnail-gallery.css" rel="stylesheet">
     
-      <!-- javascript -->
-    <script src="/resource/bootstrap/js/jquery.js"></script>
-    <script src="/resource/bootstrap/js/bootstrap.js"></script>
+    <!-- javascript -->
+    <script src="${pageContext.request.contextPath}/resources/bootstrap/js/jquery.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/bootstrap/js/bootstrap.js"></script>
     
   </head>
   <body>
