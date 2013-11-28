@@ -13,8 +13,13 @@
 	</context-param>
 
 	<listener>
+    <listener-class>com.hq.cloud.web.InitializeListener</listener-class>
+  </listener>
+	
+	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
+	
 
 	<servlet>
 		<servlet-name>springServlet</servlet-name>
@@ -30,5 +35,4 @@
 		<servlet-name>springServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	
 </web-app>
