@@ -12,6 +12,17 @@ import com.google.api.client.json.jackson2.JacksonFactory;
 public final class ServiceFactory {
 	static Credential credential;
 	static GoogleCredentialManager manager;
+	
+	/**
+	 * Get Google Drive service
+	 * 
+	 * @return Google Drive service
+	 */
+	public static GooglePicasaService getGooglePicasaService() {
+		if (credential == null) 
+			return null;
+		return new GooglePicasaService(credential);
+	}
 
 	/**
 	 * Get Google Drive service
@@ -21,7 +32,13 @@ public final class ServiceFactory {
 	public static GoogleDriveService getGoogleDriveService() {
 		if (credential == null) 
 			return null;
-		return new GoogleDriveService(manager.getDriveService(credential));
+		return new GoogleDriveService(credential);
+	}
+	
+	public static GoogleOauthService getGoogleOauthService() {
+		if (credential == null)
+			return null;
+		return new GoogleOauthService(credential);
 	}
 
 	/**

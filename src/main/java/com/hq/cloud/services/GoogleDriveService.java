@@ -8,6 +8,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.services.drive.Drive;
 import com.google.api.services.drive.Drive.Changes;
 import com.google.api.services.drive.model.Change;
@@ -17,14 +18,23 @@ import com.google.api.services.drive.model.FileList;
 import com.hq.cloud.domain.Album;
 import com.hq.cloud.domain.Photo;
 
-public class GoogleDriveService {
+/**
+ * Drive service object based on given credential.
+ * 
+ * @author Hai Quach
+ *
+ */
+public class GoogleDriveService extends BaseGoogleService implements GalleryService {
 	
   private static final String FOLDER_MINE_TYPE = "application/vnd.google-apps.folder";
   
   private Drive drive;
   
-  GoogleDriveService(Drive drive) {
-	this.drive = drive;
+  GoogleDriveService(Credential credential) {
+	  super(credential);
+	  this.drive = new Drive.Builder(getHttpTransport(), getJsonFactory(), getCredential())
+	  	.setApplicationName(APPLICATION_NAME)
+	  	.build();
   }
   
   /**

@@ -8,33 +8,32 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.hq.cloud.services.ServiceFactory;
 
 @Controller
-@RequestMapping(value="/gallery")
+@RequestMapping(value = "/gallery")
 public class GalleryController {
-	
-	@RequestMapping(value="/", method=RequestMethod.GET)
+
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model) {
 		if (ServiceFactory.getGoogleDriveService() == null) {
-			String url = ServiceFactory.getAuthorizationUrl();
-			model.addAttribute("driveURL", url);
-			model.addAttribute("picasaURL", url);
-		} else {
-			model.addAttribute("driveURL", "/gallery/drive");
-			model.addAttribute("picasaURL", "/gallery/picasa");
+			model.addAttribute("authorURL", ServiceFactory.getAuthorizationUrl());
 		}
 		return "Home";
 	}
-	
-	@RequestMapping(value="/picasa", method=RequestMethod.GET)
+
+	@RequestMapping(value = "/picasa", method = RequestMethod.GET)
 	public String picasa(Model model) {
+		if (ServiceFactory.getGooglePicasaService() == null) {
+			return "redirect:" + ServiceFactory.getAuthorizationUrl();
+		}
+		model.addAttribute("albums", ServiceFactory.getGooglePicasaService().getAlbums());
 		return "GooglePicasa";
 	}
-	
-  @RequestMapping(value="/drive", method=RequestMethod.GET)
-  public String drive(Model model) {
-	if (ServiceFactory.getGoogleDriveService() == null) {
-		return "redirect:" + ServiceFactory.getAuthorizationUrl();
+
+	@RequestMapping(value = "/drive", method = RequestMethod.GET)
+	public String drive(Model model) {
+		if (ServiceFactory.getGoogleDriveService() == null) {
+			return "redirect:" + ServiceFactory.getAuthorizationUrl();
+		}
+		model.addAttribute("albums", ServiceFactory.getGoogleDriveService().getAlbums());
+		return "GoogleDrive";
 	}
-    model.addAttribute("albums", ServiceFactory.getGoogleDriveService().getAlbums());
-    return "GoogleDrive";
-  }
 }

@@ -12,20 +12,20 @@ import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.googleapis.auth.oauth2.GoogleTokenResponse;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.JsonFactory;
-import com.google.api.services.drive.Drive;
 
 class GoogleCredentialManager {
-		
+
   /**
    * Scopes for which to request access from the user.
    */
   public static final List<String> SCOPES = Arrays.asList(
 	      // Required to access and manipulate files.
 	      "https://www.googleapis.com/auth/drive",
+	      "https://picasaweb.google.com/data/",
 	      // Required to identify the user in our data store.
 	      "https://www.googleapis.com/auth/userinfo.email",
 	      "https://www.googleapis.com/auth/userinfo.profile");
-	  
+  
   /**
    * Client secrets object.
    */
@@ -76,12 +76,13 @@ class GoogleCredentialManager {
             .getRedirectUris().get(0), SCOPES).setAccessType("offline").setApprovalPrompt("force");
     return urlBuilder.build();
   }
-
+  
   /**
    * Retrieves a new access token by exchanging the given code with OAuth2
    * end-points.
    * 
-   * @param code Exchange code.
+   * @param code
+   *            Exchange code.
    * @return A credential object.
    */
   public Credential retrieve(String code) {
@@ -95,22 +96,8 @@ class GoogleCredentialManager {
           .setRefreshToken(response.getRefreshToken())
           .setExpirationTimeMilliseconds(response.getExpiresInSeconds());
     } catch (IOException e) {
-      new RuntimeException(
-          "An unknown problem occured while retrieving token");
+      new RuntimeException("An unknown problem occured while retrieving token");
     }
     return null;
-  }
-
-
-  /**
-   * Build and return a Drive service object based on given credential.
-   * 
-   * @param Google credential
-   * @return Drive service object that is ready to make requests, 
-   *     or null if there was a problem.
-   */
-  public Drive getDriveService(Credential credential) {
-    return new Drive.Builder(this.transport, this.jsonFactory, credential).build();
-  }
-	
+  } 
 }
