@@ -4,7 +4,6 @@ import java.util.Collection;
 
 
 public class Album {
-	private static final long serialVersionUID = 1L;
 	private String id;
 	private String title;
 	private String name;
