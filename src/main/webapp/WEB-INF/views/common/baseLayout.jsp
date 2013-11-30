@@ -1,4 +1,6 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,14 +12,14 @@
     <title><tiles:getAsString name="title"/></title>
 
     <!-- Bootstrap core CSS -->
-    <link href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="<c:url value='/resources/bootstrap/css/bootstrap.css" rel="stylesheet'/>">
 
     <!-- Custom CSS for the 'Thumbnail Gallery' Template -->
-    <link href="${pageContext.request.contextPath}/resources/bootstrap/css/thumbnail-gallery.css" rel="stylesheet">
+    <link href="<c:url value='/resources/bootstrap/css/thumbnail-gallery.css" rel="stylesheet'/>">
     
     <!-- javascript -->
-    <script src="${pageContext.request.contextPath}/resources/bootstrap/js/jquery.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/bootstrap/js/bootstrap.js"></script>
+    <script src="<c:url value='/resources/bootstrap/js/jquery.js'/>"></script>
+    <script src="<c:url value='/resources/bootstrap/js/bootstrap.js'/>"></script>
     
   </head>
   <body>

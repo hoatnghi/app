@@ -357,12 +357,12 @@ img {
 .img-thumbnail {
   display: inline-block;
   height: auto;
-  max-width: 100%;
+  max-width: auto;
   padding: 4px;
   line-height: 1.428571429;
   background-color: #000000;
-  border: 10px solid #dddddd;
-  border-radius: 4px;
+  border: 15px solid #dddddd;
+  border-radius: 5px;
   -webkit-transition: all 0.2s ease-in-out;
           transition: all 0.2s ease-in-out;
 }

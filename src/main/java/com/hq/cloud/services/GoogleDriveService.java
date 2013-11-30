@@ -24,7 +24,7 @@ import com.hq.cloud.domain.Photo;
  * @author Hai Quach
  *
  */
-public class GoogleDriveService extends BaseGoogleService implements GalleryService {
+public class GoogleDriveService extends GoogleOauthService implements GalleryService {
 	
   private static final String FOLDER_MINE_TYPE = "application/vnd.google-apps.folder";
   
