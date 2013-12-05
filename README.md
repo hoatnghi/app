@@ -63,14 +63,3 @@ If you want to debug the source code or look at the Javadocs of any library in t
         mvn dependency:sources
         mvn dependency:resolve -Dclassifier=javadoc
 
-------------------------------------
-MySQL 5.1 database added.  Please make note of these credentials:
-
-       Root User: admin42WWSyD
-   Root Password: SaMzLgLHAX1C
-   Database Name: hq
-
-Connection URL: mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/
-
-You can manage your new MySQL database by also embedding phpmyadmin.
-The phpmyadmin username and password will be the same as the MySQL credentials above.
