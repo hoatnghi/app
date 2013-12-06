@@ -6,3 +6,5 @@ target
 .project
 .classpath
 .DS_Store
+/deployments
+.openshift/*
