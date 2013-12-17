@@ -32,16 +32,3 @@
     </div><!-- /.col -->
   </div><!-- /.row -->
 </div><!-- /.page-content -->
-<div class="row">
-  <div class="col-lg-12">
-    <h3 class="page-header">${album.name}</h3>
-  </div>
-  <c:forEach items="${album.photos}" var="photo">
-  <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-    <a class="thumbnail" data-fancybox-group="button" href="${photo.link}">
-      <img class="img-responsive" alt="${photo.description}>" 
-        src="${photo.thumbnail}"/>
-    </a>
-  </div>
-  </c:forEach>
-</div>
