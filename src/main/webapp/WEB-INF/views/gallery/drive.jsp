@@ -19,8 +19,8 @@
         <ul class="ace-thumbnails">
           <c:forEach items="${albums}" var="album">
           <li>
-            <a href="driveDetail?id=${album.id}" data-rel="colorbox">
-              <img alt="150x150" src="${album.thumbnail}" />
+            <a href="driveDetail?id=${album.id}">
+              <img src="${album.thumbnail}" width="220px"/>
             </a>
           </li>
           </c:forEach>
