@@ -44,16 +44,16 @@
 
     <ul class="submenu">
       <li>
-        <a href="/public/drive">
+        <a href="/gallery/drive">
           <i class="icon-double-angle-right"></i>
-          Google &amp; Drive
+          Google Drive
         </a>
       </li>
 
       <li>
-        <a href="public/picasa">
+        <a href="/gallery/picasa">
           <i class="icon-double-angle-right"></i>
-          Google &amp; Picasa
+          Google Picasa
         </a>
       </li>
     </ul>
